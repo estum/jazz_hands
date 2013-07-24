@@ -20,7 +20,7 @@ module JazzHands
         # enabled, try printing with it first.
         Pry.config.print = ->(output, value) do
           return if JazzHands._hirb_output && Hirb::View.view_or_page_output(value)
-          pretty = value.ai(indent: 2)
+          pretty = value.ai
           Pry::Helpers::BaseHelpers.stagger_output("=> #{pretty}", output)
         end
 
